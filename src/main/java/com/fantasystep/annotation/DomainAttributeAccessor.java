@@ -2,10 +2,6 @@ package com.fantasystep.annotation;
 
 public class DomainAttributeAccessor {
 
-    private java.lang.String foreignKey;
-
-    private java.lang.String label;
-
     private boolean isPropertyNode;
 
     private java.lang.String category;
@@ -14,13 +10,9 @@ public class DomainAttributeAccessor {
 
     private java.lang.String icon;
 
-    public java.lang.String getForeignKey() {
-        return foreignKey;
-    }
+    private java.lang.String foreignKey;
 
-    public java.lang.String getLabel() {
-        return label;
-    }
+    private java.lang.String label;
 
     public boolean getIsPropertyNode() {
         return isPropertyNode;
@@ -38,12 +30,12 @@ public class DomainAttributeAccessor {
         return icon;
     }
 
-    public void setForeignKey(java.lang.String foreignKey) {
-        this.foreignKey = foreignKey;
+    public java.lang.String getForeignKey() {
+        return foreignKey;
     }
 
-    public void setLabel(java.lang.String label) {
-        this.label = label;
+    public java.lang.String getLabel() {
+        return label;
     }
 
     public void setIsPropertyNode(boolean isPropertyNode) {
@@ -60,6 +52,14 @@ public class DomainAttributeAccessor {
 
     public void setIcon(java.lang.String icon) {
         this.icon = icon;
+    }
+
+    public void setForeignKey(java.lang.String foreignKey) {
+        this.foreignKey = foreignKey;
+    }
+
+    public void setLabel(java.lang.String label) {
+        this.label = label;
     }
 
 }

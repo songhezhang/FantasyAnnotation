@@ -2,11 +2,25 @@ package com.fantasystep.annotation;
 
 public class FieldAttributeAccessor {
 
-    private java.lang.Class<?> listType;
+    private boolean sharedKey;
+
+    private java.lang.String foreignKey;
+
+    private java.lang.Class<? extends com.fantasystep.annotation.ValueOptions> valueOptions;
+
+    private com.fantasystep.annotation.StorageModelType storageModel;
+
+    private java.lang.String storageName;
 
     private java.lang.Class<? extends java.lang.Enum<?>> enumType;
 
+    private boolean required;
+
+    private java.lang.String defaultValue;
+
     private com.fantasystep.annotation.Storage storage;
+
+    private java.lang.Class<?> listType;
 
     private java.lang.Class<? extends com.fantasystep.domain.Node> relationType;
 
@@ -18,25 +32,11 @@ public class FieldAttributeAccessor {
 
     private boolean encrypted;
 
-    private com.fantasystep.annotation.SerializationType serializationType;
+    private boolean propertyField;
 
     private int serializationMaximumLength;
 
-    private boolean sharedKey;
-
-    private boolean required;
-
-    private java.lang.String defaultValue;
-
-    private java.lang.String foreignKey;
-
-    private java.lang.Class<? extends com.fantasystep.annotation.ValueOptions> valueOptions;
-
-    private com.fantasystep.annotation.StorageModelType storageModel;
-
-    private java.lang.String storageName;
-
-    private boolean propertyField;
+    private com.fantasystep.annotation.SerializationType serializationType;
 
     private com.fantasystep.helper.PropertyGroups group;
 
@@ -44,9 +44,19 @@ public class FieldAttributeAccessor {
 
     private com.fantasystep.helper.Cardinality cardinality;
 
-    private java.lang.String label;
+    private boolean specialDisplay;
+
+    private java.lang.String[] dynamicInfo;
+
+    private java.lang.String jsonTemplate;
+
+    private java.lang.String groupLabel;
 
     private com.fantasystep.annotation.ControlType controlType;
+
+    private java.lang.String label;
+
+    private boolean isSiblingUnique;
 
     private com.fantasystep.helper.Validation validate;
 
@@ -54,26 +64,46 @@ public class FieldAttributeAccessor {
 
     private java.lang.String validationErrorMessage;
 
-    private boolean isSiblingUnique;
+    private boolean isPartAttr;
 
-    private java.lang.String groupLabel;
+    public boolean getSharedKey() {
+        return sharedKey;
+    }
 
-    private boolean specialDisplay;
+    public java.lang.String getForeignKey() {
+        return foreignKey;
+    }
 
-    private java.lang.String[] dynamicInfo;
+    public java.lang.Class<? extends com.fantasystep.annotation.ValueOptions> getValueOptions() {
+        return valueOptions;
+    }
 
-    private java.lang.String jsonTemplate;
+    public com.fantasystep.annotation.StorageModelType getStorageModel() {
+        return storageModel;
+    }
 
-    public java.lang.Class<?> getListType() {
-        return listType;
+    public java.lang.String getStorageName() {
+        return storageName;
     }
 
     public java.lang.Class<? extends java.lang.Enum<?>> getEnumType() {
         return enumType;
     }
 
+    public boolean getRequired() {
+        return required;
+    }
+
+    public java.lang.String getDefaultValue() {
+        return defaultValue;
+    }
+
     public com.fantasystep.annotation.Storage getStorage() {
         return storage;
+    }
+
+    public java.lang.Class<?> getListType() {
+        return listType;
     }
 
     public java.lang.Class<? extends com.fantasystep.domain.Node> getRelationType() {
@@ -96,44 +126,16 @@ public class FieldAttributeAccessor {
         return encrypted;
     }
 
-    public com.fantasystep.annotation.SerializationType getSerializationType() {
-        return serializationType;
+    public boolean getPropertyField() {
+        return propertyField;
     }
 
     public int getSerializationMaximumLength() {
         return serializationMaximumLength;
     }
 
-    public boolean getSharedKey() {
-        return sharedKey;
-    }
-
-    public boolean getRequired() {
-        return required;
-    }
-
-    public java.lang.String getDefaultValue() {
-        return defaultValue;
-    }
-
-    public java.lang.String getForeignKey() {
-        return foreignKey;
-    }
-
-    public java.lang.Class<? extends com.fantasystep.annotation.ValueOptions> getValueOptions() {
-        return valueOptions;
-    }
-
-    public com.fantasystep.annotation.StorageModelType getStorageModel() {
-        return storageModel;
-    }
-
-    public java.lang.String getStorageName() {
-        return storageName;
-    }
-
-    public boolean getPropertyField() {
-        return propertyField;
+    public com.fantasystep.annotation.SerializationType getSerializationType() {
+        return serializationType;
     }
 
     public com.fantasystep.helper.PropertyGroups getGroup() {
@@ -148,12 +150,32 @@ public class FieldAttributeAccessor {
         return cardinality;
     }
 
-    public java.lang.String getLabel() {
-        return label;
+    public boolean getSpecialDisplay() {
+        return specialDisplay;
+    }
+
+    public java.lang.String[] getDynamicInfo() {
+        return dynamicInfo;
+    }
+
+    public java.lang.String getJsonTemplate() {
+        return jsonTemplate;
+    }
+
+    public java.lang.String getGroupLabel() {
+        return groupLabel;
     }
 
     public com.fantasystep.annotation.ControlType getControlType() {
         return controlType;
+    }
+
+    public java.lang.String getLabel() {
+        return label;
+    }
+
+    public boolean getIsSiblingUnique() {
+        return isSiblingUnique;
     }
 
     public com.fantasystep.helper.Validation getValidate() {
@@ -168,36 +190,48 @@ public class FieldAttributeAccessor {
         return validationErrorMessage;
     }
 
-    public boolean getIsSiblingUnique() {
-        return isSiblingUnique;
+    public boolean getIsPartAttr() {
+        return isPartAttr;
     }
 
-    public java.lang.String getGroupLabel() {
-        return groupLabel;
+    public void setSharedKey(boolean sharedKey) {
+        this.sharedKey = sharedKey;
     }
 
-    public boolean getSpecialDisplay() {
-        return specialDisplay;
+    public void setForeignKey(java.lang.String foreignKey) {
+        this.foreignKey = foreignKey;
     }
 
-    public java.lang.String[] getDynamicInfo() {
-        return dynamicInfo;
+    public void setValueOptions(java.lang.Class<? extends com.fantasystep.annotation.ValueOptions> valueOptions) {
+        this.valueOptions = valueOptions;
     }
 
-    public java.lang.String getJsonTemplate() {
-        return jsonTemplate;
+    public void setStorageModel(com.fantasystep.annotation.StorageModelType storageModel) {
+        this.storageModel = storageModel;
     }
 
-    public void setListType(java.lang.Class<?> listType) {
-        this.listType = listType;
+    public void setStorageName(java.lang.String storageName) {
+        this.storageName = storageName;
     }
 
     public void setEnumType(java.lang.Class<? extends java.lang.Enum<?>> enumType) {
         this.enumType = enumType;
     }
 
+    public void setRequired(boolean required) {
+        this.required = required;
+    }
+
+    public void setDefaultValue(java.lang.String defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+
     public void setStorage(com.fantasystep.annotation.Storage storage) {
         this.storage = storage;
+    }
+
+    public void setListType(java.lang.Class<?> listType) {
+        this.listType = listType;
     }
 
     public void setRelationType(java.lang.Class<? extends com.fantasystep.domain.Node> relationType) {
@@ -220,44 +254,16 @@ public class FieldAttributeAccessor {
         this.encrypted = encrypted;
     }
 
-    public void setSerializationType(com.fantasystep.annotation.SerializationType serializationType) {
-        this.serializationType = serializationType;
+    public void setPropertyField(boolean propertyField) {
+        this.propertyField = propertyField;
     }
 
     public void setSerializationMaximumLength(int serializationMaximumLength) {
         this.serializationMaximumLength = serializationMaximumLength;
     }
 
-    public void setSharedKey(boolean sharedKey) {
-        this.sharedKey = sharedKey;
-    }
-
-    public void setRequired(boolean required) {
-        this.required = required;
-    }
-
-    public void setDefaultValue(java.lang.String defaultValue) {
-        this.defaultValue = defaultValue;
-    }
-
-    public void setForeignKey(java.lang.String foreignKey) {
-        this.foreignKey = foreignKey;
-    }
-
-    public void setValueOptions(java.lang.Class<? extends com.fantasystep.annotation.ValueOptions> valueOptions) {
-        this.valueOptions = valueOptions;
-    }
-
-    public void setStorageModel(com.fantasystep.annotation.StorageModelType storageModel) {
-        this.storageModel = storageModel;
-    }
-
-    public void setStorageName(java.lang.String storageName) {
-        this.storageName = storageName;
-    }
-
-    public void setPropertyField(boolean propertyField) {
-        this.propertyField = propertyField;
+    public void setSerializationType(com.fantasystep.annotation.SerializationType serializationType) {
+        this.serializationType = serializationType;
     }
 
     public void setGroup(com.fantasystep.helper.PropertyGroups group) {
@@ -272,12 +278,32 @@ public class FieldAttributeAccessor {
         this.cardinality = cardinality;
     }
 
-    public void setLabel(java.lang.String label) {
-        this.label = label;
+    public void setSpecialDisplay(boolean specialDisplay) {
+        this.specialDisplay = specialDisplay;
+    }
+
+    public void setDynamicInfo(java.lang.String[] dynamicInfo) {
+        this.dynamicInfo = dynamicInfo;
+    }
+
+    public void setJsonTemplate(java.lang.String jsonTemplate) {
+        this.jsonTemplate = jsonTemplate;
+    }
+
+    public void setGroupLabel(java.lang.String groupLabel) {
+        this.groupLabel = groupLabel;
     }
 
     public void setControlType(com.fantasystep.annotation.ControlType controlType) {
         this.controlType = controlType;
+    }
+
+    public void setLabel(java.lang.String label) {
+        this.label = label;
+    }
+
+    public void setIsSiblingUnique(boolean isSiblingUnique) {
+        this.isSiblingUnique = isSiblingUnique;
     }
 
     public void setValidate(com.fantasystep.helper.Validation validate) {
@@ -292,24 +318,8 @@ public class FieldAttributeAccessor {
         this.validationErrorMessage = validationErrorMessage;
     }
 
-    public void setIsSiblingUnique(boolean isSiblingUnique) {
-        this.isSiblingUnique = isSiblingUnique;
-    }
-
-    public void setGroupLabel(java.lang.String groupLabel) {
-        this.groupLabel = groupLabel;
-    }
-
-    public void setSpecialDisplay(boolean specialDisplay) {
-        this.specialDisplay = specialDisplay;
-    }
-
-    public void setDynamicInfo(java.lang.String[] dynamicInfo) {
-        this.dynamicInfo = dynamicInfo;
-    }
-
-    public void setJsonTemplate(java.lang.String jsonTemplate) {
-        this.jsonTemplate = jsonTemplate;
+    public void setIsPartAttr(boolean isPartAttr) {
+        this.isPartAttr = isPartAttr;
     }
 
 }

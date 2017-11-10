@@ -12,6 +12,8 @@ import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.Task;
 
+import com.fantasystep.systemweaver.annotation.SystemWeaver;
+
 public class AnnotationGenerator extends Task {
 
 	@SuppressWarnings("unused")
@@ -112,7 +114,7 @@ public class AnnotationGenerator extends Task {
 
 	public static void main(String[] args) {
 		new AnnotationGenerator().accessorGenerator("FieldAttributeAccessor",
-				FantasyStep.class, FantasyView.class);
+				FantasyStep.class, FantasyView.class, SystemWeaver.class);
 		new AnnotationGenerator().accessorGenerator("DomainAttributeAccessor",
 				DomainClass.class);
 	}
